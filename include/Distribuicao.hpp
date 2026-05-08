@@ -3,12 +3,11 @@
 
 class Distribuicao {
 public:
-
     virtual ~Distribuicao() {}
 
-    virtual double pdf(double x) const = 0;
+    virtual double densidade(double x) const = 0;
 
-    virtual double cdf(double x) const = 0;
+    virtual double acumulada(double x) const = 0;
 
     virtual double media() const = 0;
 
