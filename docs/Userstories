@@ -1,0 +1,13 @@
+US01 — Como usuário, quero escolher o tipo de distribuição pelo menu, para acessar rapidamente o cálculo que preciso.
+US02 — Como usuário, quero calcular a probabilidade P(X = k) de uma distribuição de Bernoulli informando p e k, para analisar experimentos simples de sucesso ou fracasso.
+US03 — Como usuário, quero calcular a probabilidade P(X = k) de uma distribuição Binomial informando n, p e k, para saber a chance de obter k sucessos em n tentativas.
+US04 — Como usuário, quero calcular a probabilidade P(X = k) de uma distribuição de Poisson informando λ e k, para estimar ocorrências de eventos em um intervalo fixo.
+US05 — Como usuário, quero calcular a probabilidade P(X = k) de uma distribuição Geométrica informando p e k, para saber a chance do primeiro sucesso ocorrer na k-ésima tentativa.
+US06 — Como usuário, quero calcular a probabilidade P(X = k) de uma distribuição Binomial Negativa informando r, p e k, para saber a chance de obter o r-ésimo sucesso na k-ésima tentativa.
+US07 — Como usuário, quero calcular a probabilidade P(X = k) de uma distribuição Hipergeométrica informando N, K, n e k, para analisar amostragens sem reposição.
+US08 — Como usuário, quero calcular a densidade e a probabilidade acumulada de uma distribuição Uniforme informando a, b e x, para modelar eventos igualmente prováveis num intervalo.
+US09 — Como usuário, quero calcular a densidade e a probabilidade acumulada de uma distribuição Normal informando μ, σ e x, para analisar fenômenos naturais e padronizar valores.
+US10 — Como usuário, quero calcular a densidade e a probabilidade acumulada de uma distribuição Gama informando os parâmetros de forma e taxa, para modelar tempos de espera.
+US11 — Como usuário, quero calcular a densidade e a probabilidade acumulada de uma distribuição Beta informando α e β, para modelar probabilidades dentro do intervalo [0,1].
+US12 — Como usuário, quero calcular fatorial, combinação e permutação informando os valores, para resolver problemas de análise combinatória.
+US13 — Como usuário, quero visualizar a esperança, variância e desvio padrão de qualquer distribuição após informar os parâmetros, para entender o comportamento da distribuição escolhida.
