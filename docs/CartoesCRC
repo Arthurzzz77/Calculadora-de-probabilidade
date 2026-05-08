@@ -1,0 +1,215 @@
+Cartões CRC: 
+
+
+CLASSE Distribuicao
+
+Responsabilidades:
+- Definir a interface geral de uma distribuição de probabilidade
+- Estabelecer métodos comuns para cálculo de esperança, variância, desvio padrão e nome da distribuição
+- Servir como classe base para distribuições discretas e contínuas
+
+Colaboradores:
+- DistribuicaoDiscreta
+- DistribuicaoContinua
+
+CLASSE: DistribuicaoDiscreta
+
+Responsabilidades:
+- Representar o comportamento geral de distribuições discretas
+- Definir a interface para cálculo de probabilidade de valores discretos
+- Servir como classe base para distribuições que calculam probabilidades do tipo P(X = k)
+
+Colaboradores:
+- Distribuicao
+- Bernoulli
+- Binomial
+- BinomialNegativa
+- Geometrica
+- Hipergeometrica
+- Poisson
+
+CLASSE: DistribuicaoContinua
+
+Responsabilidades:
+- Representar o comportamento geral de distribuições contínuas
+- Definir a interface para cálculo de probabilidade em intervalos
+- Servir como classe base para distribuições que calculam probabilidades do tipo P(a <= X <= b)
+
+Colaboradores:
+- Distribuicao
+- Uniforme
+- Normal
+- Gama
+- Beta
+
+CLASSE: Bernoulli
+
+Responsabilidades:
+- Armazenar a probabilidade de sucesso p
+- Calcular a probabilidade da variável assumir determinado valor
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso ao parâmetro p quando necessário
+
+Colaboradores:
+- DistribuicaoDiscreta
+
+CLASSE: Binomial
+
+Responsabilidades:
+- Armazenar o número de tentativas n
+- Armazenar a probabilidade de sucesso p
+- Calcular a probabilidade de obter k sucessos em n tentativas
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso aos parâmetros n e p quando necessário
+
+Colaboradores:
+- DistribuicaoDiscreta
+- Combinatoria
+
+CLASSE: BinomialNegativa
+
+Responsabilidades:
+- Armazenar o número de sucessos desejados r
+- Armazenar a probabilidade de sucesso p
+- Calcular a probabilidade associada à obtenção de r sucessos
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso aos parâmetros r e p quando necessário
+
+Colaboradores:
+- DistribuicaoDiscreta
+- Combinatoria
+
+CLASSE: Geometrica
+
+Responsabilidades:
+- Armazenar a probabilidade de sucesso p
+- Calcular a probabilidade relacionada ao primeiro sucesso
+- Calcular a probabilidade acumulada
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso ao parâmetro p quando necessário
+
+Colaboradores:
+- DistribuicaoDiscreta
+
+CLASSE: Hipergeometrica
+
+Responsabilidades:
+- Armazenar o tamanho da população
+- Armazenar a quantidade de sucessos existentes na população
+- Armazenar o tamanho da amostra
+- Calcular a probabilidade de obter k sucessos em uma amostra sem reposição
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso aos parâmetros da distribuição quando necessário
+
+Colaboradores:
+- DistribuicaoDiscreta
+- Combinatoria
+
+CLASSE: Poisson
+
+Responsabilidades:
+- Armazenar o parâmetro lambda, que representa a taxa média de ocorrência
+- Calcular a probabilidade de ocorrência de k eventos
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso ao parâmetro lambda quando necessário
+
+Colaboradores:
+- DistribuicaoDiscreta
+- Combinatoria
+
+
+CLASSE: Uniforme
+
+Responsabilidades:
+- Armazenar os limites inferior e superior do intervalo da distribuição
+- Calcular a probabilidade de a variável aleatória pertencer a um intervalo
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso aos limites da distribuição quando necessário
+
+Colaboradores:
+- DistribuicaoContinua
+
+CLASSE: Normal
+
+Responsabilidades:
+- Armazenar a média da distribuição
+- Armazenar o desvio padrão da distribuição
+- Calcular a probabilidade de a variável aleatória pertencer a um interval
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso à média e ao desvio padrão quando necessário
+
+Colaboradores:
+- DistribuicaoContinua
+
+CLASSE: Gama
+
+Responsabilidades:
+- Armazenar os parâmetros da distribuição Gama
+- Calcular a probabilidade de a variável aleatória pertencer a um intervalo
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso aos parâmetros da distribuição quando necessário
+
+Colaboradores:
+- DistribuicaoContinua
+
+CLASSE: Beta
+
+Responsabilidades:
+- Armazenar os parâmetros alpha e beta da distribuição
+- Calcular a probabilidade de a variável aleatória pertencer a um intervalo
+- Calcular a esperança da distribuição
+- Calcular a variância da distribuição
+- Calcular o desvio padrão da distribuição
+- Retornar o nome da distribuição
+- Disponibilizar acesso aos parâmetros alpha e beta quando necessário
+
+Colaboradores:
+- DistribuicaoContinua
+
+CLASSE: Combinatoria
+
+
+Responsabilidades:
+- Calcular fatoriais utilizados nas fórmulas de probabilidade
+- Calcular combinações do tipo C(n, k)
+- Centralizar operações matemáticas auxiliares usadas por mais de uma distribuição
+- Evitar repetição de código nas classes de distribuições discretas
+
+Colaboradores:
+- Binomial
+- BinomialNegativa
+- Hipergeometrica
+- Poisson
+
+
+
+
+
+
