@@ -12,10 +12,10 @@ private:
 public:
 
     Hipergeometrica(int tamPopulacao, int sucessosPopulacao, int tamAmostra);
-    double probabilidade(int k) const override;
-    double acumulada(double x) const override;
-    double media() const override;
-    double variancia() const override;
-    void exibir() const override;
+    double probabilidade(int k) const;
+    double acumulada(double x) const;
+    double media() const;
+    double variancia() const;
+    void exibir() const;
 };
 #endif
