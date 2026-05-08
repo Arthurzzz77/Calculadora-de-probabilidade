@@ -8,7 +8,7 @@ public:
 
     virtual double probabilidade(int k) const = 0;
  
-    double densidade(double x) const override {
+    double densidade(double x) const{
       return probabilidade(static_cast<int>(x));
       }
 };
