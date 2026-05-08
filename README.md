@@ -4,4 +4,4 @@ Este projeto consiste em uma calculadora de probabilidade que será desenvolvida
 
 O objetivo desse projeto é aplicar os aprendizados de PDS 2 na construção de um programa funcional que, através dos parâmetros utilizados em distribuições probabilísticas, facilite o cálculo de probabilidades e auxilie no entendimento dos seus conceitos.
 
-07/05 22:12 jpks: os cartões CRC estão no docs
+07/05: Os cartões CRC e User Stories estão no docs!
