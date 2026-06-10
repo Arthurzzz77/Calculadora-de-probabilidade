@@ -5,77 +5,73 @@
 #include <limits>
 
 namespace{
+
 //Funcao auxiliar para calculo da acumulada da distribuicao Gama.
-double gammaIncompletaRegularizada(double a, double x){
-    if (x < 0.0 || a <= 0.0){
-        throw std::domain_error("gammaIncompletaRegularizada: argumentos invalidos.");
+double gamaIncompletaRegularizada(double forma, double x){
+    if (x < 0.0 || forma <= 0.0){
+        throw std::domain_error("gamaIncompletaRegularizada: argumentos invalidos.");
     }
 
     if (x == 0.0){
         return 0.0;
     }
 
-    const double EPS = 1e-12;
-    const int MAX_ITER = 1000;
-    double gln = std::lgamma(a);
+    const int MAX_ITERACOES = 1000;
+    const double PRECISAO = 1e-12;
+    const double QUASE_ZERO = 1e-300;
+    double logGamaForma = std::lgamma(forma);
 
-    if (x < a + 1.0){
-        double ap = a;
-        double soma = 1.0 / a;
+    if (x < forma + 1.0){
+        double denominador = forma;
+        double soma = 1.0 / forma;
         double termo = soma;
-
-        for (int n = 0; n < MAX_ITER; n++){
-            ap += 1.0;
-            termo *= x / ap;
+        
+        for (int iter = 0; iter < MAX_ITERACOES; ++iter){
+            denominador += 1.0;
+            termo *= x / denominador;
             soma += termo;
-
-            if(std::fabs(termo) < std::fabs(soma) * EPS){
+            
+            if (std::fabs(termo) < std::fabs(soma) * PRECISAO){
                 break;
             }
         }
-
-        return soma * std::exp(-x + a * std::log(x) - gln);
+        return soma * std::exp(-x + forma * std::log(x) - logGamaForma);
     }
 
-    const double FPMIN = 1e-300;
+    double denominadorParcial = x + 1.0 - forma;
+    double razaoC = 1.0 / QUASE_ZERO;
+    double razaoD = 1.0 / denominadorParcial;
+    double resultado = razaoD;
 
-    double b = x + 1.0 - a;
-    double c = 1.0 / FPMIN;
-    double d = 1.0 / b;
-    double h = d;
+    for (int iter = 1; iter <= MAX_ITERACOES; ++iter){
+        double coeficiente = -iter * (iter - forma);
+        denominadorParcial += 2.0;
+        razaoD = coeficiente * razaoD + denominadorParcial;
 
-    for(int i = 1; i <= MAX_ITER; i++){
-        double an = -i * (i - a);
-
-        b += 2.0;
-
-        d = an * d + b;
-
-        if (std::fabs(d) < FPMIN){
-            d = FPMIN;
+        if (std::fabs(razaoD) < QUASE_ZERO){
+            razaoD = QUASE_ZERO;
         }
-
-        c = b + an / c;
-
-        if (std::fabs(c) < FPMIN){
-            c = FPMIN;
+        
+        razaoC = denominadorParcial + coeficiente / razaoC;
+        if (std::fabs(razaoC) < QUASE_ZERO) {
+            razaoC = QUASE_ZERO;
         }
+        razaoD = 1.0 / razaoD;
+        double fatorCorrecao = razaoD * razaoC;
+        resultado *= fatorCorrecao;
 
-        d = 1.0 / d;
-
-        double delta = d * c;
-        h *= delta;
-
-        if(std::fabs(delta - 1.0) < EPS){
+        if (std::fabs(fatorCorrecao - 1.0) < PRECISAO){
             break;
         }
     }
 
-    double q = std::exp(-x + a * std::log(x) - gln) * h;
-    return 1.0 - q;
+    double caudaSuperior = std::exp(-x + forma * std::log(x) - logGamaForma) * resultado;
+    return 1.0 - caudaSuperior;
 }
 }
-Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa){
+
+
+Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa) {
     if (forma <= 0.0){
         throw std::invalid_argument("Gama: o parametro de forma deve ser positivo.");
     }
@@ -84,45 +80,40 @@ Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa){
         throw std::invalid_argument("Gama: o parametro de taxa deve ser positivo.");
     }
 }
+
 //Calcula a densidade da distribuicao.
 double Gama::densidade(double x) const{
     if (x < 0.0){
         return 0.0;
     }
 
+//Caso especial da densidade em x = 0.
     if (x == 0.0){
         if (forma_ < 1.0){
             return std::numeric_limits<double>::infinity();
         }
-
         if (forma_ == 1.0){
             return taxa_;
         }
         return 0.0;
     }
-
-    double parte1 = forma_ * std::log(taxa_);
-    double parte2 = (forma_ - 1.0) * std::log(x);
-    double parte3 = taxa_ * x;
-    double parte4 = std::lgamma(forma_);
-    double logDensidade = parte1 + parte2 - parte3 - parte4;
-
-    return std::exp(logDensidade);
+    double logDens = forma_ * std::log(taxa_) + (forma_ - 1.0) * std::log(x) - taxa_ * x - std::lgamma(forma_);
+    return std::exp(logDens);
 }
-//Calcula a probabilidade acumulada.
 
+//Calcula a probabilidade acumulada.
 double Gama::acumulada(double x) const{
     if (x <= 0.0){
         return 0.0;
     }
-
-    return gammaIncompletaRegularizada(forma_, taxa_ * x);
+    return gamaIncompletaRegularizada(forma_, taxa_ * x);
 }
 
 //Retorna a esperanca da distribuicao.
 double Gama::esperanca() const{
     return forma_ / taxa_;
 }
+
 //Retorna a variancia da distribuicao.
 double Gama::variancia() const{
     return forma_ / (taxa_ * taxa_);
@@ -131,6 +122,7 @@ double Gama::variancia() const{
 std::string Gama::nome() const{
     return "Gama";
 }
+
 void Gama::exibir() const{
     std::cout << "Distribuicao Gama\n"
               << "  Forma      = " << forma_ << "\n"
