@@ -5,10 +5,7 @@
 #include <limits>
 
 namespace{
-
-/**
- * @brief Funcao auxiliar para calculo da acumulada da distribuicao Gama.
- */
+//Funcao auxiliar para calculo da acumulada da distribuicao Gama.
 double gammaIncompletaRegularizada(double a, double x){
     if (x < 0.0 || a <= 0.0){
         throw std::domain_error("gammaIncompletaRegularizada: argumentos invalidos.");
@@ -78,15 +75,6 @@ double gammaIncompletaRegularizada(double a, double x){
     return 1.0 - q;
 }
 }
-
-/**
- * @brief Construtor da distribuicao Gama.
- *
- * @param forma Parametro de forma.
- * @param taxa Parametro de taxa.
- *
- * @throw std::invalid_argument Caso os parametros sejam invalidos.
- */
 Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa){
     if (forma <= 0.0){
         throw std::invalid_argument("Gama: o parametro de forma deve ser positivo.");
@@ -96,13 +84,7 @@ Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa){
         throw std::invalid_argument("Gama: o parametro de taxa deve ser positivo.");
     }
 }
-
-/**
- * @brief Calcula a densidade da distribuicao.
- *
- * @param x Valor de entrada.
- * @return Densidade em x.
- */
+//Calcula a densidade da distribuicao.
 double Gama::densidade(double x) const{
     if (x < 0.0){
         return 0.0;
@@ -127,13 +109,8 @@ double Gama::densidade(double x) const{
 
     return std::exp(logDensidade);
 }
+//Calcula a probabilidade acumulada.
 
-/**
- * @brief Calcula a probabilidade acumulada.
- *
- * @param x Valor de entrada.
- * @return Probabilidade acumulada.
- */
 double Gama::acumulada(double x) const{
     if (x <= 0.0){
         return 0.0;
@@ -142,30 +119,18 @@ double Gama::acumulada(double x) const{
     return gammaIncompletaRegularizada(forma_, taxa_ * x);
 }
 
-/**
- * @brief Retorna a esperanca da distribuicao.
- */
+//Retorna a esperanca da distribuicao.
 double Gama::esperanca() const{
     return forma_ / taxa_;
 }
-
-/**
- * @brief Retorna a variancia da distribuicao.
- */
+//Retorna a variancia da distribuicao.
 double Gama::variancia() const{
     return forma_ / (taxa_ * taxa_);
 }
 
-/**
- * @brief Retorna o nome da distribuicao.
- */
 std::string Gama::nome() const{
     return "Gama";
 }
-
-/**
- * @brief Exibe as informacoes da distribuicao.
- */
 void Gama::exibir() const{
     std::cout << "Distribuicao Gama\n"
               << "  Forma      = " << forma_ << "\n"
