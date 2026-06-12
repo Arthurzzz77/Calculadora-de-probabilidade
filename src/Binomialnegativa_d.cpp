@@ -13,7 +13,7 @@ BinomialNegativa::BinomialNegativa(int r, double p) : r_(r), p_(p) {
     }
 }
 double BinomialNegativa::probabilidade(int k) const {
-    // k = numero de tentativas ate o r-esimo sucesso (k >= r).
+    // k = numero de tentativas ate o r-esimo sucesso (k >= r)
     if (k < r_) return 0.0;
     double coef = Combinatoria::coeficienteBinomial(k - 1, r_ - 1);
     return coef * std::pow(p_, r_) * std::pow(1.0 - p_, k - r_);
