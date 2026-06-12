@@ -1,4 +1,4 @@
-#include "Uniformec.hpp"
+#include "Uniforme_c.hpp"
 #include <stdexcept>
 #include <iostream>
 
