@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 // Acumulada: soma das probabilidades de 0 ate k
-// Subclasses com forma fechada podem sobrescrever para maior precisao.
+// Subclasses com forma fechada podem sobrescrever para maior precisao
 double DistribuicaoDiscreta::acumulada(int k) const {
     if (k < 0) {
         return 0.0;
