@@ -3,7 +3,6 @@
 #include <memory>
 #include <string>
 #include <stdexcept>
-
 #include "DistribuicaoDiscreta.hpp"
 #include "DistribuicaoContinua.hpp"
 #include "Bernoulli_d.hpp"
