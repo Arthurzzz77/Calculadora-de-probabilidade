@@ -6,7 +6,7 @@
 
 namespace {
 
-// Funcao gama incompleta inferior regularizada P(forma, x) = P(X <= x) da Gama.
+// Funcao gama incompleta inferior regularizada P(forma, x) = P(X <= x) da Gama
 // Dois metodos, cada um rapido na sua regiao:
 // serie de potencias quando x e pequeno (x < forma + 1)
 // fracao continuada (metodo de Lentz) quando x e grande
@@ -34,7 +34,7 @@ double gamaIncompletaRegularizada(double forma, double x) {
         }
         return soma * std::exp(-x + forma * std::log(x) - logGamaForma);
     } else {
-        // ---- Fracao continuada (Lentz): calcula a cauda superior Q = 1 - P ----
+        //Fracao continuada (Lentz): calcula a cauda superior Q = 1 - P
         double denominadorParcial = x + 1.0 - forma;
         double razaoC = 1.0 / QUASE_ZERO;
         double razaoD = 1.0 / denominadorParcial;
@@ -49,7 +49,7 @@ double gamaIncompletaRegularizada(double forma, double x) {
             razaoD = 1.0 / razaoD;
             double fatorCorrecao = razaoD * razaoC;
             resultado *= fatorCorrecao;
-            // Convergiu: o fator de correcao ficou praticamente 1.
+            // Convergiu: o fator de correcao ficou praticamente 1
             if (std::fabs(fatorCorrecao - 1.0) < PRECISAO) break;
         }
         double caudaSuperior = std::exp(-x + forma * std::log(x) - logGamaForma) * resultado;
@@ -57,7 +57,7 @@ double gamaIncompletaRegularizada(double forma, double x) {
     }
 }
 
-} // namespace
+}
 
 Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa) {
     if (forma <= 0.0) {
@@ -69,12 +69,12 @@ Gama::Gama(double forma, double taxa) : forma_(forma), taxa_(taxa) {
 }
 
 double Gama::densidade(double x) const {
-    // Fora do suporte: tempo negativo nao existe.
+    // Fora do suporte: tempo negativo nao existe
     if (x < 0.0) {
         return 0.0;
     }
 
-    // Caso especial x = 0: a formula geral faria log(0).
+    // Caso especial x = 0: a formula geral faria log(0)
     // O valor correto depende do parametro de forma:
     if (x == 0.0) {
         if (forma_ < 1.0) {
@@ -86,7 +86,7 @@ double Gama::densidade(double x) const {
         return 0.0;        // forma > 1: curva nasce do chao
     }
 
-    // Caso geral: formula calculada em log para evitar overflow.
+    // Caso geral: formula calculada em log para evitar overflow
     double logDens = forma_ * std::log(taxa_) + (forma_ - 1.0) * std::log(x)
                      - taxa_ * x - std::lgamma(forma_);
     return std::exp(logDens);
@@ -114,7 +114,8 @@ void Gama::exibir() const {
               << "  forma (k)  = " << forma_ << "\n"
               << "  taxa (beta)= " << taxa_ << "\n"
               << "  Esperanca  = " << esperanca() << "\n"
-              << "  Variancia  = " << variancia() << std::endl;
+              << "  Variancia  = " << variancia() << "\n"
+              << "  Desvio     = " << desvioPadrao() << std::endl;
 }
 
 double Gama::getForma() const {
