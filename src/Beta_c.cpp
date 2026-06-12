@@ -6,8 +6,8 @@
 
 namespace {
 
-// Fracao continuada da funcao beta incompleta (algoritmo de Lentz).
-// Vai adicionando "andares" na fracao ate o valor estabilizar.
+// Fracao continuada da funcao beta incompleta (algoritmo de Lentz)
+// Vai adicionando "andares" na fracao ate o valor estabilizar
 double fracaoContinuadaBeta(double alfa, double beta, double x) {
     const int MAX_ITERACOES = 1000;
     const double PRECISAO = 1e-12;      // para quando a mudanca for menor que isso
@@ -17,8 +17,7 @@ double fracaoContinuadaBeta(double alfa, double beta, double x) {
     double alfaMaisUm = alfa + 1.0;
     double alfaMenosUm = alfa - 1.0;
 
-    // Variaveis do metodo de Lentz: o resultado e construido como um
-    // produto de fatores de correcao, um por iteracao.
+    // Variaveis do metodo de Lentz: o resultado e construido como um produto de fatores de correcao, um por iteracao
     double razaoC = 1.0;
     double razaoD = 1.0 - somaAlfaBeta * x / alfaMaisUm;
     if (std::fabs(razaoD) < QUASE_ZERO) razaoD = QUASE_ZERO;
@@ -28,7 +27,7 @@ double fracaoContinuadaBeta(double alfa, double beta, double x) {
     for (int iter = 1; iter <= MAX_ITERACOES; ++iter) {
         double doisIter = 2.0 * iter;
 
-        // Primeiro coeficiente da iteracao (termo "par" da fracao).
+        // Primeiro coeficiente da iteracao (termo "par" da fracao)
         double coeficiente = iter * (beta - iter) * x /
                              ((alfaMenosUm + doisIter) * (alfa + doisIter));
         razaoD = 1.0 + coeficiente * razaoD;
@@ -38,7 +37,7 @@ double fracaoContinuadaBeta(double alfa, double beta, double x) {
         razaoD = 1.0 / razaoD;
         resultado *= razaoD * razaoC;
 
-        // Segundo coeficiente da iteracao (termo "impar" da fracao).
+        // Segundo coeficiente da iteracao (termo "impar" da fracao)
         coeficiente = -(alfa + iter) * (somaAlfaBeta + iter) * x /
                       ((alfa + doisIter) * (alfaMaisUm + doisIter));
         razaoD = 1.0 + coeficiente * razaoD;
@@ -50,13 +49,13 @@ double fracaoContinuadaBeta(double alfa, double beta, double x) {
         double fatorCorrecao = razaoD * razaoC;
         resultado *= fatorCorrecao;
 
-        // Convergiu: o fator de correcao ficou praticamente 1.
+        // Convergiu: o fator de correcao ficou praticamente 1
         if (std::fabs(fatorCorrecao - 1.0) < PRECISAO) break;
     }
     return resultado;
 }
 
-// Funcao beta incompleta regularizada I_x(alfa, beta) = P(X <= x) da Beta.
+// Funcao beta incompleta regularizada I_x(alfa, beta) = P(X <= x) da Beta
 double betaIncompletaRegularizada(double alfa, double beta, double x) {
     if (x < 0.0 || x > 1.0) {
         throw std::domain_error("betaIncompletaRegularizada: x deve estar em [0, 1].");
@@ -64,13 +63,13 @@ double betaIncompletaRegularizada(double alfa, double beta, double x) {
     if (x == 0.0) return 0.0;
     if (x == 1.0) return 1.0;
 
-    // Fator de escala da fracao continuada, calculado em log para evitar estouro.
+    // Fator de escala da fracao continuada, calculado em log para evitar estouro
     double logFatorEscala = std::lgamma(alfa + beta) - std::lgamma(alfa) - std::lgamma(beta)
                             + alfa * std::log(x) + beta * std::log(1.0 - x);
     double fatorEscala = std::exp(logFatorEscala);
 
-    // A fracao continuada converge rapido so quando x e "pequeno".
-    // Para x grande, usa a simetria I_x(a,b) = 1 - I_(1-x)(b,a).
+    // A fracao continuada converge rapido so quando x e "pequeno"
+    // Para x grande, usa a simetria I_x(a,b) = 1 - I_(1-x)(b,a)
     double limiteConvergencia = (alfa + 1.0) / (alfa + beta + 2.0);
     if (x < limiteConvergencia) {
         return fatorEscala * fracaoContinuadaBeta(alfa, beta, x) / alfa;
@@ -92,7 +91,7 @@ Beta::Beta(double alfa, double beta) : alfa_(alfa), beta_(beta) {
 double Beta::densidade(double x) const {
     if (x < 0.0 || x > 1.0) return 0.0;
     if (x == 0.0 || x == 1.0) {
-        // Evita log(0),pois a densidade pode divergir nas bordas conforme os parametros.
+        // Evita log(0),pois a densidade pode divergir nas bordas conforme os parametros
         if ((x == 0.0 && alfa_ < 1.0) || (x == 1.0 && beta_ < 1.0)) {
             return std::numeric_limits<double>::infinity();
         }
