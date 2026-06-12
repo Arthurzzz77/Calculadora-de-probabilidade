@@ -1,4 +1,4 @@
-#include "Normalc.hpp"
+#include "Normal_c.hpp"
 #include <stdexcept>
 #include <iostream>
 #include <cmath>
