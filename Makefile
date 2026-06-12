@@ -8,7 +8,7 @@ BINDIR   := $(BUILDDIR)/bin
 OBJDIR   := $(BUILDDIR)/obj
 TARGET   := $(BINDIR)/calculadora
 
-# Coleta todos os .cpp de src/ e gera os respectivos .o em build/obj/.
+# Coleta todos os .cpp de src/ e gera os respectivos .o em build/obj/
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 OBJECTS  := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SOURCES))
 
