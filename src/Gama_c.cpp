@@ -8,8 +8,8 @@ namespace {
 
 // Funcao gama incompleta inferior regularizada P(forma, x) = P(X <= x) da Gama.
 // Dois metodos, cada um rapido na sua regiao:
-//   - serie de potencias quando x e pequeno (x < forma + 1)
-//   - fracao continuada (metodo de Lentz) quando x e grande
+// serie de potencias quando x e pequeno (x < forma + 1)
+// fracao continuada (metodo de Lentz) quando x e grande
 double gamaIncompletaRegularizada(double forma, double x) {
     if (x < 0.0 || forma <= 0.0) {
         throw std::domain_error("gamaIncompletaRegularizada: argumentos invalidos.");
@@ -22,7 +22,7 @@ double gamaIncompletaRegularizada(double forma, double x) {
     double logGamaForma = std::lgamma(forma);
 
     if (x < forma + 1.0) {
-        // ---- Serie de potencias: soma termos ate eles ficarem despreziveis ----
+        // Serie de potencias: soma termos ate eles ficarem despreziveis
         double denominador = forma;
         double soma = 1.0 / forma;
         double termo = soma;
