@@ -39,7 +39,7 @@ void cabecalho() {
 
 //  defensiva
 
-// Le um numero inteiro; repete ate o usuario digitar algo valido.
+// Le um numero inteiro; repete ate o usuario digitar algo valido
 int lerInteiro(const std::string& mensagem) {
     int valor;
     while (true) {
