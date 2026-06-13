@@ -110,9 +110,13 @@ Ao executar make run, o menu principal é exibido:
    CALCULADORA DE PROBABILIDADES
 
 SELECIONE SUA DISTRIBUICAO:
+  
    1 - Bernoulli          (discreta)
+   
    2 - Binomial           (discreta)
+   
    ...
+   
    0 - Sair
 
 Escolha:
