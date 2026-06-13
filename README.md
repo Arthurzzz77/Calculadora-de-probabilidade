@@ -71,12 +71,19 @@ O vídeo demonstra a compilação, execução e operação do sistema.
 ## Arquitetura e Organização
 
 Calculadora-de-probabilidade/
-├── src/           Implementações (.cpp)
-├── include/       Interfaces e declarações (.hpp)
-├── build/         Binários e objetos compilados
-├── docs/          Documentação (Doxygen, cartões CRC, User Stories)
-├── tests/         Testes
-├── Makefile       Script de compilação
+
+├── src/         Implementações (.cpp)
+
+├── include/     Interfaces e declarações (.hpp)
+
+├── build/       Binários e objetos compilados
+
+├── docs/        Documentação (Doxygen, cartões CRC, User Stories)
+
+├── tests/       Testes
+
+├── Makefile     Script de compilação
+
 └── README.md
 
 ## Hierarquia de classes
