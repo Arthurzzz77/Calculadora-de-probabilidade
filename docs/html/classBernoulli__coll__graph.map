@@ -1,0 +1,7 @@
+<map id="Bernoulli" name="Bernoulli">
+<area shape="rect" id="Node000001" title="Distribuicao de Bernoulli." alt="" coords="42,157,122,184"/>
+<area shape="rect" id="Node000002" href="$classDistribuicaoDiscreta.html" title="Classe base abstrata para distribuicoes de probabilidade discretas." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,123,85,157,79,155,80,126"/>
+<area shape="rect" id="Node000003" href="$classDistribuicao.html" title="Classe base abstrata para todas as distribuicoes de probabilidade." alt="" coords="32,5,132,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,46,85,81,79,80,81,51"/>
+</map>

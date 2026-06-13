@@ -1,0 +1,7 @@
+<map id="Exponencial" name="Exponencial">
+<area shape="rect" id="Node000001" title="Distribuicao Exponencial." alt="" coords="34,157,134,184"/>
+<area shape="rect" id="Node000002" href="$classDistribuicaoContinua.html" title="Classe base abstrata para distribuicoes de probabilidade continuas." alt="" coords="5,81,163,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,123,87,157,81,155,82,126"/>
+<area shape="rect" id="Node000003" href="$classDistribuicao.html" title="Classe base abstrata para todas as distribuicoes de probabilidade." alt="" coords="34,5,134,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,46,87,81,81,80,83,51"/>
+</map>

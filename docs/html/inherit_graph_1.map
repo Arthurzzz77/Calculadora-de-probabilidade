@@ -1,0 +1,29 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classDistribuicao.html" title="Classe base abstrata para todas as distribuicoes de probabilidade." alt="" coords="5,265,105,293"/>
+<area shape="rect" id="Node000001" href="$classDistribuicaoContinua.html" title="Classe base abstrata para distribuicoes de probabilidade continuas." alt="" coords="153,136,310,164"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="86,254,212,162,210,167,90,258"/>
+<area shape="rect" id="Node000007" href="$classDistribuicaoDiscreta.html" title="Classe base abstrata para distribuicoes de probabilidade discretas." alt="" coords="155,369,308,397"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="94,299,208,367,204,370,93,304"/>
+<area shape="rect" id="Node000002" href="$classBeta.html" title="Distribuicao Beta." alt="" coords="402,5,453,33"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="256,123,301,83,357,44,403,25,399,28,359,48,304,87,260,127"/>
+<area shape="rect" id="Node000003" href="$classExponencial.html" title="Distribuicao Exponencial." alt="" coords="377,57,477,85"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="279,128,357,95,391,84,387,87,359,100,282,132"/>
+<area shape="rect" id="Node000004" href="$classGama.html" title="Distribuicao Gama." alt="" coords="397,109,457,137"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="324,135,399,126,394,129,326,139"/>
+<area shape="rect" id="Node000005" href="$classNormal.html" title="Distribuicao Normal (gaussiana)." alt="" coords="392,161,462,189"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="325,159,395,170,390,172,326,165"/>
+<area shape="rect" id="Node000006" href="$classUniforme.html" title="Distribuicao Uniforme continua." alt="" coords="386,213,468,241"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="281,167,359,198,391,212,386,213,357,203,282,172"/>
+<area shape="rect" id="Node000008" href="$classBernoulli.html" title="Distribuicao de Bernoulli." alt="" coords="388,265,467,293"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="264,358,357,303,389,292,385,294,359,308,267,363"/>
+<area shape="rect" id="Node000009" href="$classBinomial.html" title="Distribuicao Binomial." alt="" coords="388,317,467,345"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="300,362,389,340,385,343,302,367"/>
+<area shape="rect" id="Node000010" href="$classBinomialNegativa.html" title="Distribuicao Binomial Negativa." alt="" coords="358,369,496,397"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="323,381,360,382,355,384,324,386"/>
+<area shape="rect" id="Node000011" href="$classGeometrica.html" title="Distribuicao Geometrica." alt="" coords="378,421,476,449"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="301,399,381,422,376,423,301,404"/>
+<area shape="rect" id="Node000012" href="$classHipergeometrica.html" title="Distribuicao Hipergeometrica." alt="" coords="362,473,492,501"/>
+<area shape="poly" id="edge12_Node000007_Node000012" title=" " alt="" coords="267,403,359,458,388,473,383,473,357,463,265,409"/>
+<area shape="rect" id="Node000013" href="$classPoisson.html" title="Distribuicao de Poisson." alt="" coords="392,525,463,553"/>
+<area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="253,407,299,459,328,486,359,510,394,529,388,528,357,515,325,490,296,463,251,412"/>
+</map>

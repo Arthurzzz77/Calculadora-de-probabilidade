@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['gama_0',['Gama',['../classGama.html',1,'Gama'],['../classGama.html#af5805677a38894d227a8e1076665c642',1,'Gama::Gama()']]],
+  ['geometrica_1',['Geometrica',['../classGeometrica.html',1,'Geometrica'],['../classGeometrica.html#a3f8edb811501382c9c48bc4103030763',1,'Geometrica::Geometrica()']]],
+  ['getalfa_2',['getAlfa',['../classBeta.html#a492043a426a9428de4fbc731fb599f48',1,'Beta']]],
+  ['getbeta_3',['getBeta',['../classBeta.html#a0c9ce4aaa48ab28757f6a1b758e492e5',1,'Beta']]],
+  ['getchancesucesso_4',['getChanceSucesso',['../classBernoulli.html#ad32f3093615281a1737710173dfb2a3a',1,'Bernoulli::getChanceSucesso()'],['../classBinomial.html#a517777afb369118c55dba4bbfff6e579',1,'Binomial::getChanceSucesso()']]],
+  ['getdesviopadrao_5',['getDesvioPadrao',['../classNormal.html#aeb7b480dbeefa7f15c2767699a1cc641',1,'Normal']]],
+  ['getforma_6',['getForma',['../classGama.html#ae6bcde95e4d143efb12afc30b96433c9',1,'Gama']]],
+  ['getk_7',['getK',['../classHipergeometrica.html#a6938c62171e07fea53a76c307bc865fb',1,'Hipergeometrica']]],
+  ['getlimiteinferior_8',['getLimiteInferior',['../classUniforme.html#a88a7f96bff3cc80ac82bb314c72e5bc6',1,'Uniforme']]],
+  ['getlimitesuperior_9',['getLimiteSuperior',['../classUniforme.html#a37fce57c826be7dbde2e0cffa9b0744b',1,'Uniforme']]],
+  ['getmedia_10',['getMedia',['../classNormal.html#ac8450007f584fc74c6e3c025dee8c6eb',1,'Normal']]],
+  ['getn_11',['getN',['../classHipergeometrica.html#a56a90cd7ea9cef05282e49c04eddc83a',1,'Hipergeometrica']]],
+  ['getn_12',['getn',['../classHipergeometrica.html#a4ca4822937bef10ec3c83a296ca04426',1,'Hipergeometrica']]],
+  ['getnumtentativas_13',['getNumTentativas',['../classBinomial.html#acad672567dda377d177f13fc4f791406',1,'Binomial']]],
+  ['getp_14',['getP',['../classBinomialNegativa.html#a659cfbe3d02619af7adf3bc84b61e6f0',1,'BinomialNegativa::getP()'],['../classGeometrica.html#a6e3e6a30db45b0b233c00aecaafade67',1,'Geometrica::getP()']]],
+  ['getr_15',['getR',['../classBinomialNegativa.html#a580617099c63e76d91fadd1b8640f2d7',1,'BinomialNegativa']]],
+  ['gettaxa_16',['getTaxa',['../classExponencial.html#a2913b8f5d2a5df185839ee1e2e86d0e4',1,'Exponencial::getTaxa()'],['../classGama.html#af40b3b37cfbe0164fde681cc3c39b4bd',1,'Gama::getTaxa()']]],
+  ['gettaxamedia_17',['getTaxaMedia',['../classPoisson.html#a1627370b02fd163cfbeeb22b54009535',1,'Poisson']]]
+];
