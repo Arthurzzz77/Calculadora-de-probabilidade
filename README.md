@@ -154,6 +154,7 @@ Abra o arquivo docs/html/index.html no navegador, ou acesse online pelo GitHub P
 https://arthurzzz77.github.io/Calculadora-de-probabilidade/html/hierarchy.html
 
 ## Planejamento
+
 Etapa 1: Planejamento, cartões CRC e User Stories
 Etapa 2: Implementação dos arquivos .hpp
 Etapa 3: Implementação dos arquivos .cpp
@@ -162,7 +163,7 @@ A divisão inicial foi seguida, com ajustes pontuais por colaboração mútua en
 A implementação da distribuição Normal exigiu atenção especial à integração numérica para o cálculo da acumulada.
 A documentação Doxygen foi gerada ao final, a partir dos comentários já presentes nos headers.
 
-##Evidências no GitHub
+## Evidências no GitHub
 
 Commits individuais por membro refletindo a divisão do trabalho
 Cartões CRC e User Stories disponíveis em docs/
