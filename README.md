@@ -99,15 +99,15 @@ P(X = k), P(X ≤ k), Esperança, Variância e Desvio Padrão - para todas as 11
 
 Ao executar make run, o menu principal é exibido:
 
-==================================================
-          CALCULADORA DE PROBABILIDADES
-==================================================
+------------------------------------
+   CALCULADORA DE PROBABILIDADES
+------------------------------------
 SELECIONE SUA DISTRIBUICAO:
    1 - Bernoulli          (discreta)
    2 - Binomial           (discreta)
    ...
    0 - Sair
-==================================================
+------------------------------------
 Escolha:
 
 ## Exemplo  — Distribuição Binomial
