@@ -1,11 +1,11 @@
 # Calculadora de Probabilidade
 ## Alunos: Arthur Felipe de Freitas Morais | Matricula: 2025075132; Guilherme Gonçalves Veras | Matrícula: 2025075230; Gabriel Andrade de Oliveira | Matrícula: 2025020699; João Pedro Kakehasi Saturnino | Matrícula: 2025123099; Isaque Emanuel Craveiro de Araujo | Matrícula: 2025113530.
+
 Este projeto consiste em uma calculadora de probabilidade que será desenvolvida como o trabalho prático de PDS 2 (Programação e Desenvolvimento de Software 2). Utilizando conceitos aprofundados paralelamente na disciplina de Probabilidade, esta ferramenta permite calcular distribuições de probabilidade com base em diferentes tipos de distribuições estatísticas, como de Bernoulli, Binomial, de Poisson, entre outras. 
 
 O objetivo desse projeto é aplicar os aprendizados de PDS 2 na construção de um programa funcional que, através dos parâmetros utilizados em distribuições probabilísticas, facilite o cálculo de probabilidades e auxilie no entendimento dos seus conceitos.
 
 07/05: Os cartões CRC e User Stories estão no docs!
-
 
 ## Divisão do trabalho 
 
@@ -64,7 +64,7 @@ make run compila (se necessário) e executa o programa.
 
 ## Vídeo de Demonstração
 
-link:
+link:https://drive.google.com/drive/folders/1TB_hFUVrFDKWXUZO2zrRP_iQ9UlyY5ha
 
 O vídeo demonstra a compilação, execução e operação do sistema.
 
@@ -153,12 +153,12 @@ Como acessar:
 Abra o arquivo docs/html/index.html no navegador, ou acesse online pelo GitHub Pages:
 https://arthurzzz77.github.io/Calculadora-de-probabilidade/html/hierarchy.html
 
-## Planejamento
+## Planejamento (Sprints)
 
-Etapa 1: Planejamento, cartões CRC e User Stories
-Etapa 2: Implementação dos arquivos .hpp
-Etapa 3: Implementação dos arquivos .cpp
-Etapa 4: Finalização do trabalho e documentação
+Etapa 1: Planejamento, cartões CRC e User Stories - até 07/05
+Etapa 2: Implementação dos arquivos .hpp - até 07/05
+Etapa 3: Implementação dos arquivos .cpp - feito até 09/06
+Etapa 4: Finalização do trabalho e documentação - feito até 12/06
 A divisão inicial foi seguida, com ajustes pontuais por colaboração mútua entre membros.
 A implementação da distribuição Normal exigiu atenção especial à integração numérica para o cálculo da acumulada.
 A documentação Doxygen foi gerada ao final, a partir dos comentários já presentes nos headers.
