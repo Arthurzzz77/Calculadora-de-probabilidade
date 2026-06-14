@@ -14,64 +14,37 @@ A divisão do trabalho foi feita a partir de uma média ponderada do número de 
 A distribuição final ficou da seguinte forma:
 
 João Pedro Saturnino:
-
 Bernoulli_d.cpp
-
 Binomial_d.cpp
-
 Poisson_d.cpp
-
 Geometrica_d.hpp + Geometrica_d.cpp
-
 Binomialnegativa_d.hpp + Binomialnegativa_d.cpp
-
 Hipergeometrica_d.cpp
 
-
 Guilherme Veras:
-
 Combinatoria.cpp
-
 Distribuicao.cpp
-
 DistribuicaoDiscreta.cpp
-
 DistribuicaoContinua.cpp
-
 Bernoulli_d.hpp
-
 Binomial_d.hpp
-
 Poisson_d.hpp
-
 Hipergeometrica_d.hpp
 
-
 Isaque Craveiro:
-
 Combinatoria.hpp
-
 main.cpp
 
-
 Arthur Felipe:
-
 Distribuicao.hpp
-
 DistribuicaoDiscreta.hpp
-
 DistribuicaoContinua.hpp
-
 Uniforme_c.hpp + Uniforme_c.cpp
-
 Gama_c.cpp
 
 Gabriel Andrade:
-
 Beta_c.hpp + Beta_c.cpp
-
 Gama_c.hpp
-
 Exponencial_c.hpp + Exponencial_c.cpp
 
 
