@@ -14,38 +14,66 @@ A divisão do trabalho foi feita a partir de uma média ponderada do número de 
 A distribuição final ficou da seguinte forma:
 
 João Pedro Saturnino:
+
 Bernoulli_d.cpp
+
 Binomial_d.cpp
+
 Poisson_d.cpp
+
 Geometrica_d.hpp + Geometrica_d.cpp
+
 Binomialnegativa_d.hpp + Binomialnegativa_d.cpp
+
 Hipergeometrica_d.cpp
 
+
 Guilherme Veras:
+
 Combinatoria.cpp
+
 Distribuicao.cpp
+
 DistribuicaoDiscreta.cpp
+
 DistribuicaoContinua.cpp
+
 Bernoulli_d.hpp
+
 Binomial_d.hpp
+
 Poisson_d.hpp
+
 Hipergeometrica_d.hpp
 
+
 Isaque Craveiro:
+
 Combinatoria.hpp
+
 main.cpp
 
+
 Arthur Felipe:
+
 Distribuicao.hpp
+
 DistribuicaoDiscreta.hpp
+
 DistribuicaoContinua.hpp
+
 Uniforme_c.hpp + Uniforme_c.cpp
+
 Gama_c.cpp
 
 Gabriel Andrade:
+
 Beta_c.hpp + Beta_c.cpp
+
 Gama_c.hpp
+
 Exponencial_c.hpp + Exponencial_c.cpp
+
 
 ## Como Compilar e Executar
 1. Clone o repositório
@@ -90,6 +118,7 @@ Calculadora-de-probabilidade/
 
 
 Distribuicao — classe base abstrata para todas as distribuições
+
 DistribuicaoDiscreta — base para distribuições discretas
 Bernoulli, Binomial, Geometrica, BinomialNegativa, Hipergeometrica, Poisson
 
@@ -139,9 +168,13 @@ obs: Parâmetros decimais devem ser inseridos com ponto (ex: 1.5, não 1,5).
 O sistema valida os parâmetros de entrada em todos os construtores das distribuições, lançando std::invalid_argument com mensagem descritiva quando um valor inválido é fornecido. Exemplos:
 
 Bernoulli: p deve estar em [0, 1]
+
 Binomial: n deve ser positivo; p em [0, 1]
+
 Normal: sigma deve ser maior que 0
+
 Poisson: lambda deve ser maior que 0
+
 Hipergeométrica: k não pode exceder min(n, K)
 
 As validações estão implementadas nos construtores de cada classe em include/ e src/.
@@ -156,11 +189,17 @@ https://arthurzzz77.github.io/Calculadora-de-probabilidade/html/hierarchy.html
 ## Planejamento (Sprints)
 
 Etapa 1: Planejamento, cartões CRC e User Stories - até 07/05
+
 Etapa 2: Implementação dos arquivos .hpp - até 07/05
+
 Etapa 3: Implementação dos arquivos .cpp - feito até 09/06
+
 Etapa 4: Finalização do trabalho e documentação - feito até 12/06
+
 A divisão inicial foi seguida, com ajustes pontuais por colaboração mútua entre membros.
+
 A implementação da distribuição Normal exigiu atenção especial à integração numérica para o cálculo da acumulada.
+
 A documentação Doxygen foi gerada ao final, a partir dos comentários já presentes nos headers.
 
 ## Evidências no GitHub
